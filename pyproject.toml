@@ -1,0 +1,24 @@
+[project]
+name = "snowflake-agent"
+version = "0.1.0"
+description = "Snowflake query agent with SQL tuning and cost optimization"
+requires-python = ">=3.10"
+dependencies = [
+    "snowflake-connector-python>=3.12",
+    "cryptography>=42",
+    "python-dotenv>=1.0",
+    "sqlglot>=30",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
